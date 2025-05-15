@@ -1,0 +1,86 @@
+{
+  "name": "typescript-monolith-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for a TypeScript monolithic application.",
+  "homepage": "https://github.com/onurravli/typescript-monolith-boilerplate",
+  "bugs": {
+    "url": "https://github.com/onurravli/typescript-monolith-boilerplate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onurravli/typescript-monolith-boilerplate.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Onur Ravli",
+    "email": "onurravli@onurravli.com",
+    "url": "https://onurravli.com"
+  },
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "build:dev": "tsc --watch -p .",
+    "dev": "concurrently \"npm run build:dev\" \"npm run start:dev\"",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "postinstall": "pnpm sort",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prisma:generate": "prisma generate --schema=./prisma",
+    "prisma:migrate:dev": "dotenv -e .env.development -- prisma migrate dev --schema=./prisma",
+    "prisma:migrate:prod": "dotenv -e .env.production -- prisma migrate deploy --schema=./prisma",
+    "prisma:studio:dev": "dotenv -e .env.development -- prisma studio --schema=./prisma",
+    "prisma:studio:prod": "dotenv -e .env.production -- prisma studio --schema=./prisma",
+    "sort": "sort-package-json **/package.json",
+    "start": "node dist/server.js",
+    "start:dev": "node --watch dist/server.js",
+    "tidy": "pnpm format:fix && pnpm lint:fix && pnpm sort"
+  },
+  "dependencies": {
+    "@prisma/client": "6.7.0",
+    "bcryptjs": "^3.0.2",
+    "chalk": "4.1.2",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^6.7.0",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/module-alias": "^2.0.4",
+    "@types/node": "^22.15.18",
+    "@types/swagger-ui-express": "^4.1.8",
+    "concurrently": "^9.1.2",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.26.0",
+    "module-alias": "^2.2.3",
+    "prettier": "^3.5.3",
+    "sort-package-json": "^3.2.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1"
+  },
+  "_moduleAliases": {
+    "@/app": "dist/app",
+    "@/controllers": "dist/app/controllers",
+    "@/dtos": "dist/app/dtos",
+    "@/docs": "dist/app/docs",
+    "@/index": "dist/app/index",
+    "@/lib": "dist/app/lib",
+    "@/middlewares": "dist/app/middlewares",
+    "@/prisma": "generated/prisma",
+    "@/routes": "dist/app/routes",
+    "@/schemas": "dist/app/schemas",
+    "@/services": "dist/app/services",
+    "@/types": "dist/app/types",
+    "@/utils": "dist/app/utils"
+  }
+}
