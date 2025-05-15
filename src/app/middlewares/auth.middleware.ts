@@ -1,12 +1,8 @@
+import type { NextFunction, Request, Response } from "express";
 import { CustomError, type Middleware } from "@/types";
 import { handleApiError, jwt, prisma } from "@/utils";
-import type { NextFunction, Request, Response } from "express";
 
-const authMiddleware: Middleware = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+const authMiddleware: Middleware = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const token = req.headers.authorization?.split(" ")[1];
     if (!token) {

@@ -1,6 +1,6 @@
-import { logger } from "@/utils";
 import { config } from "dotenv";
 import path from "path";
+import { logger } from "@/utils";
 
 const NODE_ENV = process.env.NODE_ENV || "development";
 const DOTENV_PATH = path.resolve(process.cwd(), `.env.${NODE_ENV}`);

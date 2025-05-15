@@ -1,7 +1,7 @@
 import swaggerDocument from "@/docs/swagger.json";
-import type { Route } from "@/types";
 import { Router } from "express";
 import swaggerUi from "swagger-ui-express";
+import type { Route } from "@/types";
 
 const docsRouter: Router = Router();
 const docsPath: string = "/docs";

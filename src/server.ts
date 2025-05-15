@@ -1,7 +1,5 @@
 import "module-alias/register";
-
 import app from "@/app";
-
 import { env, logger } from "@/utils";
 
 app.listen(env.PORT, () => {

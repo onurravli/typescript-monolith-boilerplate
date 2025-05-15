@@ -1,5 +1,5 @@
-import type { Middleware } from "@/types";
 import type { Router } from "express";
+import type { Middleware } from "@/types";
 
 type Route = {
   router: Router;

@@ -1,8 +1,8 @@
+import { Router } from "express";
 import { AuthController } from "@/controllers";
 import { authMiddleware } from "@/middlewares";
 import { AuthService } from "@/services";
 import type { Middleware, Route } from "@/types";
-import { Router } from "express";
 
 const authRouter: Router = Router();
 const authPath: string = "/auth";

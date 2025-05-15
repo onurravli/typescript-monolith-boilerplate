@@ -1,8 +1,8 @@
-import { CustomError } from "@/types";
+import logger from "./logger.util";
 import type { Response } from "express";
 import { JsonWebTokenError } from "jsonwebtoken";
 import { ZodError } from "zod";
-import logger from "./logger.util";
+import { CustomError } from "@/types";
 
 const handleApiError = (err: unknown, res: Response) => {
   if (err instanceof CustomError) {

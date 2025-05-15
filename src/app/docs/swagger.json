@@ -169,15 +169,7 @@
             "nullable": true
           }
         },
-        "required": [
-          "id",
-          "name",
-          "surname",
-          "email",
-          "username",
-          "createdAt",
-          "updatedAt"
-        ]
+        "required": ["id", "name", "surname", "email", "username", "createdAt", "updatedAt"]
       },
       "CreateUserRequest": {
         "type": "object",

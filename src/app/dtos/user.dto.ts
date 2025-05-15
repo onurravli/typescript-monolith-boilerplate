@@ -1,8 +1,4 @@
-import type {
-  createUserSchema,
-  loginUserSchema,
-  updateUserSchema,
-} from "@/schemas";
+import type { createUserSchema, loginUserSchema, updateUserSchema } from "@/schemas";
 import type { z } from "zod";
 
 type CreateUserDto = z.infer<typeof createUserSchema>;

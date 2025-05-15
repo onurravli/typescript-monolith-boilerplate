@@ -1,7 +1,7 @@
 import { createUserSchema, loginUserSchema } from "@/schemas";
+import type { Request, Response } from "express";
 import type { AuthService } from "@/services";
 import { handleApiError } from "@/utils";
-import type { Request, Response } from "express";
 
 class AuthController {
   constructor(private readonly authService: AuthService) {
