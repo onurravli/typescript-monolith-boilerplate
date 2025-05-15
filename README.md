@@ -20,7 +20,7 @@ A boilerplate for a TypeScript monolithic application.
 1. Clone the repository
 
 ```bash
-git clone https://github.com/onurravli/typescript-monolith-boilerplate.git
+git clone https://github.com/onurravli/typescript-monolith-boilerplate.git # or you can use this repository as a template in GitHub.
 ```
 
 2. Install dependencies
